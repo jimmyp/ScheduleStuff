@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduleStuff.UnitTest", "ScheduleStuff.UnitTest\ScheduleStuff.UnitTest.csproj", "{D8A8FDF3-19E8-49BF-9A9D-6EFEBFF74A68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduleStuff", "ScheduleStuff\ScheduleStuff.csproj", "{5911BD1E-F6AB-4AE1-B5B0-C1BDD9E8DFD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8A8FDF3-19E8-49BF-9A9D-6EFEBFF74A68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A8FDF3-19E8-49BF-9A9D-6EFEBFF74A68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A8FDF3-19E8-49BF-9A9D-6EFEBFF74A68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A8FDF3-19E8-49BF-9A9D-6EFEBFF74A68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5911BD1E-F6AB-4AE1-B5B0-C1BDD9E8DFD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5911BD1E-F6AB-4AE1-B5B0-C1BDD9E8DFD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5911BD1E-F6AB-4AE1-B5B0-C1BDD9E8DFD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5911BD1E-F6AB-4AE1-B5B0-C1BDD9E8DFD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

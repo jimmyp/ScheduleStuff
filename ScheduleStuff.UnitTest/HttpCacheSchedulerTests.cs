@@ -49,10 +49,10 @@ namespace ScheduleStuff.UnitTest
         public void When_Cache_Times_Out_Task_Is_Run()
         {
             var substituteForTask = Substitute.For<VolatileTask>();
-            var taskbuilder = new HttpCacheTaskBuilder(_substituteICache, _substituteForIClock, substituteForTask);
+            var taskbuilder = new HttpCacheTaskScheduler(_substituteICache, _substituteForIClock, substituteForTask);
 
 
-            taskbuilder.CacheItemRemoved(string.Empty, new TimeSpan(1), CacheItemRemovedReason.Expired);
+            taskbuilder.TimeToRunTaskOccured();
 
 
             substituteForTask.Received().Run();
@@ -62,11 +62,11 @@ namespace ScheduleStuff.UnitTest
         public void When_Cache_Times_Out_Task_Is_Rescheduled()
         {
             var substituteForTask = Substitute.For<VolatileTask>();
-            var taskbuilder = new HttpCacheTaskBuilder(_substituteICache, _substituteForIClock, substituteForTask);
+            var taskbuilder = new HttpCacheTaskScheduler(_substituteICache, _substituteForIClock, substituteForTask);
             var oneDay = new TimeSpan(1);
             taskbuilder.Every(oneDay);
             
-            taskbuilder.CacheItemRemoved(string.Empty, oneDay, CacheItemRemovedReason.Expired);
+            taskbuilder.TimeToRunTaskOccured();
 
 
             _substituteICache.Received(2).Add(Arg.Any<string>(),

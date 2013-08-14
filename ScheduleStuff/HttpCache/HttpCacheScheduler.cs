@@ -2,7 +2,7 @@
 
 namespace ScheduleStuff.HttpCache
 {
-    public class HttpCacheScheduler : IScheduler
+    public class HttpCacheScheduler : Scheduler
     {
         private readonly IClock _clock;
         private readonly ICache _cache;
@@ -13,9 +13,9 @@ namespace ScheduleStuff.HttpCache
             _cache = cache;
         }
 
-        public HttpCacheTaskBuilder RunVolatileTask<T>() where T : VolatileTask, new()
+        public override ITaskScheduler RunVolatileTask<T>()
         {
-            return new HttpCacheTaskBuilder(_cache, _clock, new T());
+            return new HttpCacheTaskScheduler(_cache, _clock, new T());
         }
     }
 }

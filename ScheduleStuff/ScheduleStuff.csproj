@@ -44,6 +44,8 @@
     <Compile Include="FrameworkAbstractions\IClock.cs" />
     <Compile Include="HttpCache\HttpCacheScheduler.cs" />
     <Compile Include="HttpCache\HttpCacheTaskBuilder.cs" />
+    <Compile Include="IScheduler.cs" />
+    <Compile Include="ITaskBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VolatileTask.cs" />
   </ItemGroup>

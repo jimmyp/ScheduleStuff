@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="HttpCacheSchedulerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SomeTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -2,7 +2,7 @@
 
 namespace ScheduleStuff.HttpCache
 {
-    public class HttpCacheScheduler
+    public class HttpCacheScheduler : IScheduler
     {
         private readonly IClock _clock;
         private readonly ICache _cache;

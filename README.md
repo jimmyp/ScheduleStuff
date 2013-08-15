@@ -9,7 +9,7 @@ Example Usage
 -------------
 
 ```
-Scheduler.RunVolatileTask<DoSomething>().Every(new TimesSpan(1));
+Scheduler.Current.RunVolatileTask<IncrementCount>().Every(new TimeSpan(1));
 ```
 
 ####Based off

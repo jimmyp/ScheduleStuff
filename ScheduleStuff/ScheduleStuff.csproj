@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrameworkAbstractions\CacheAdapter.cs" />
+    <Compile Include="FrameworkAbstractions\ClockAdapter.cs" />
     <Compile Include="FrameworkAbstractions\ICache.cs" />
     <Compile Include="FrameworkAbstractions\IClock.cs" />
     <Compile Include="HttpCache\HttpCacheScheduler.cs" />

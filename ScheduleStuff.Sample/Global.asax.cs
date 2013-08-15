@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Caching;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using ScheduleStuff.FrameworkAbstractions;
-using ScheduleStuff.HttpCache;
 
 namespace ScheduleStuff.Sample
 {
@@ -27,39 +21,7 @@ namespace ScheduleStuff.Sample
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
 
-            var scheduler = new HttpCacheScheduler(new Clock(), new CacheAdapter());
-            scheduler.RunVolatileTask<IncrementCount>().Every(new TimeSpan(0, 0, 2, 0));
-        }
-    }
-
-    public class IncrementCount : IVolatileTask
-    {
-        public void Run()
-        {
-            Counter.Value++;
-        }
-    }
-
-    public class Counter
-    {
-        public static int Value { get; set; }
-    }
-
-    public class CacheAdapter : ICache
-    {
-        public void Add(string key, TimeSpan value, CacheDependency dependencies, DateTime absoluteExpiration,
-                        TimeSpan slidingExpiration, CacheItemPriority priority, CacheItemRemovedCallback onRemoveCallback)
-        {
-            HttpRuntime.Cache.Add(key, value, dependencies, absoluteExpiration, slidingExpiration, priority,
-                                  onRemoveCallback);
-        }
-    }
-
-    public class Clock : IClock
-    {
-        public DateTime GetNow()
-        {
-            return DateTime.Now;
+            Scheduler.Current.RunVolatileTask<IncrementCount>().Every(new TimeSpan(0, 0, 2, 0));
         }
     }
 }

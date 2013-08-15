@@ -14,8 +14,12 @@ namespace ScheduleStuff.UnitTest
         private IClock _substituteForIClock;
         private DateTime _now;
 
-        public class SomeTask : VolatileTask
+        public class SomeTask : IVolatileTask
         {
+            public void Run()
+            {
+                
+            }
         }
 
         [SetUp]
@@ -48,7 +52,7 @@ namespace ScheduleStuff.UnitTest
         [Test]
         public void When_Cache_Times_Out_Task_Is_Run()
         {
-            var substituteForTask = Substitute.For<VolatileTask>();
+            var substituteForTask = Substitute.For<IVolatileTask>();
             var taskbuilder = new HttpCacheTaskScheduler(_substituteICache, _substituteForIClock, substituteForTask);
 
 
@@ -61,7 +65,7 @@ namespace ScheduleStuff.UnitTest
         [Test]
         public void Given_Task_Is_Scheduled_As_Repeating_When_Cache_Times_Out_Task_Is_Rescheduled()
         {
-            var substituteForTask = Substitute.For<VolatileTask>();
+            var substituteForTask = Substitute.For<IVolatileTask>();
             var taskbuilder = new HttpCacheTaskScheduler(_substituteICache, _substituteForIClock, substituteForTask);
             var oneDay = new TimeSpan(1);
             taskbuilder.Every(oneDay);

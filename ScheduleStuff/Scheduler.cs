@@ -2,6 +2,6 @@
 {
     public abstract class Scheduler
     {
-        public abstract ITaskScheduler RunVolatileTask<T>() where T : VolatileTask, new();
+        public abstract ITaskScheduler RunVolatileTask<T>() where T : IVolatileTask, new();
     }
 }

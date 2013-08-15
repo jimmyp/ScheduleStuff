@@ -4,11 +4,11 @@ namespace ScheduleStuff
 {
     public abstract class TaskScheduler : ITaskScheduler
     {
-        protected VolatileTask Task;
+        protected IVolatileTask Task;
         private bool _repeatTask;
         protected TimeSpan TimeSpan;
 
-        protected TaskScheduler(VolatileTask task)
+        protected TaskScheduler(IVolatileTask task)
         {
             Task = task;
         }

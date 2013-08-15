@@ -1,9 +1,7 @@
 ﻿namespace ScheduleStuff
 {
-    public abstract class VolatileTask
+    public interface IVolatileTask
     {
-        public void Run()
-        {
-        }
+        void Run();
     }
 }

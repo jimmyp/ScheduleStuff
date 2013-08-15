@@ -9,7 +9,7 @@ namespace ScheduleStuff.HttpCache
         private readonly ICache _cache;
         private readonly IClock _clock;
 
-        public HttpCacheTaskScheduler(ICache cache, IClock clock, VolatileTask task) : base(task)
+        public HttpCacheTaskScheduler(ICache cache, IClock clock, IVolatileTask task) : base(task)
         {
             _cache = cache;
             _clock = clock;

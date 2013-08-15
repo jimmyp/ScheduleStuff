@@ -18,7 +18,7 @@ namespace ScheduleStuff.UnitTest
         {
             private readonly StubSchedule _stubSchedule;
 
-            public StubTaskScheduler(StubSchedule stubSchedule, VolatileTask task) : base(task)
+            public StubTaskScheduler(StubSchedule stubSchedule, IVolatileTask task) : base(task)
             {
                 _stubSchedule = stubSchedule;
             }
@@ -32,7 +32,7 @@ namespace ScheduleStuff.UnitTest
         [Test]
         public void When_TimeToRunTaskOccurs_Task_Is_Run()
         {
-            var substituteForTask = Substitute.For<VolatileTask>();
+            var substituteForTask = Substitute.For<IVolatileTask>();
             var substituteForSchedule = Substitute.For<StubSchedule>();
             var taskbuilder = new StubTaskScheduler(substituteForSchedule, substituteForTask);
             var oneDay = new TimeSpan(1);
@@ -47,7 +47,7 @@ namespace ScheduleStuff.UnitTest
         [Test]
         public void Given_Task_Is_Scheduled_As_Repeating_When_Cache_Times_Out_Task_Is_Rescheduled()
         {
-            var substituteForTask = Substitute.For<VolatileTask>();
+            var substituteForTask = Substitute.For<IVolatileTask>();
             var substituteForSchedule = Substitute.For<StubSchedule>();
             var taskbuilder = new StubTaskScheduler(substituteForSchedule, substituteForTask);
             var oneDay = new TimeSpan(1);

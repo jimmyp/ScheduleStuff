@@ -59,7 +59,7 @@ namespace ScheduleStuff.UnitTest
         }
 
         [Test]
-        public void When_Cache_Times_Out_Task_Is_Rescheduled()
+        public void Given_Task_Is_Scheduled_As_Repeating_When_Cache_Times_Out_Task_Is_Rescheduled()
         {
             var substituteForTask = Substitute.For<VolatileTask>();
             var taskbuilder = new HttpCacheTaskScheduler(_substituteICache, _substituteForIClock, substituteForTask);

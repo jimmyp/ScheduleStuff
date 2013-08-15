@@ -1,6 +1,6 @@
 ﻿namespace ScheduleStuff
 {
-    public class VolatileTask
+    public abstract class VolatileTask
     {
         public void Run()
         {

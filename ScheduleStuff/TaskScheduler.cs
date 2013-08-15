@@ -4,13 +4,18 @@ namespace ScheduleStuff
 {
     public abstract class TaskScheduler : ITaskScheduler
     {
-        protected VolatileTask _task;
+        protected VolatileTask Task;
         private bool _repeatTask;
-        protected TimeSpan _timeSpan;
+        protected TimeSpan TimeSpan;
+
+        protected TaskScheduler(VolatileTask task)
+        {
+            Task = task;
+        }
 
         public void Every(TimeSpan timespan)
         {
-            _timeSpan = timespan;
+            TimeSpan = timespan;
             _repeatTask = true;
 
             ScheduleNextRun();
@@ -20,7 +25,7 @@ namespace ScheduleStuff
 
         public void TimeToRunTaskOccured()
         {
-            _task.Run();
+            Task.Run();
             if (_repeatTask) ScheduleNextRun();
         }
     }

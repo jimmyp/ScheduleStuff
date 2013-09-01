@@ -1,7 +1,8 @@
 . .\buildSupport.ps1
 
 Properties {
-	$root_dir = Split-Path $psake.build_script_file
+    $psake_build_script_file = $psake.build_script_file
+	$root_dir = Resolve-Path "$psake_build_script_file\..\.."
     $build_dir = "$root_dir\build"
     $pack_dir = "$build_dir\pack"
 	$build_artifacts_dir = "$build_dir\artifacts"

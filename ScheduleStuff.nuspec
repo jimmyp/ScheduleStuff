@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>ScheduleStuff</id>
+    <version>0.58.0.0</version>
+    <authors>Jim Pelletier</authors>
+    <owners>Jim Pelletier</owners>
+    <licenseUrl>https://raw.github.com/jimmyp/ScheduleStuff/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/jimmyp/ScheduleStuff</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Schedule stuff is a package for scheduling tasks inside an ASP .NET application.</description>
+    <copyright>Copyright 2013</copyright>
+    <tags>ScheduleStuff Schedule Stuff</tags>
+  </metadata>
+</package>
